@@ -1,0 +1,22 @@
+/**app.wxss**/
+.container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 200rpx 0;
+  box-sizing: border-box;
+} 
+.flex-wrp{
+  display: flex
+}
+.flex-item{
+  flex: 1
+}
+.flex-align-item-c{
+  align-items: center
+}
+.cheng-van-cell{
+  align-items: center
+}

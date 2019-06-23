@@ -1,0 +1,23 @@
+<wxs src="../comm.wxs" module="tools" />
+<!-- 歌曲列表 -->
+<template name="cellList" >
+   <van-cell url="/pages/song/index?singerid={{item.sqhash}}">
+      <view slot="title">
+        <view class="van-cell-text">{{item.filename}}</view>
+      </view>
+      <van-icon slot="right-icon" name="play-circle-o" size="18px"/>
+    </van-cell>
+</template>
+<!-- 歌手列表 -->
+<template name="singerList">
+   <van-cell is-link url="/pages/singer/info/index?singerid={{item.singerid}}" custom-class="cheng-van-cell">
+      <view slot="icon">
+        <view class="van-cell-thumb">
+          <image src="{{tools.replaceSize(item.imgurl,400)}}" alt="{{item.singername}}" class="thumb-img" />
+        </view>
+      </view>
+      <view slot="title">
+        <view class="van-cell-text">{{item.singername}}</view>
+      </view>
+    </van-cell>
+</template>

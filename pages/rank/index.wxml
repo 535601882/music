@@ -1,0 +1,5 @@
+<!--pages/rank/index.wxml-->
+<text>共查找到了{{total}}首歌</text>
+<view wx:for="{{list}}" wx:key="id">
+  <navigator url='/pages/rank/info/index?rankid={{item.rankid}}'> {{index}}:{{item.rankname}}- {{item.rankid}}</navigator>
+</view>

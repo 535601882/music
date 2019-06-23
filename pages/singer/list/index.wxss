@@ -1,0 +1,6 @@
+/* pages/singer/list/index.wxss */
+.thumb-img{
+  width: 3.3929rem;
+  height: 3.3929rem;
+  margin-right: 10px
+}

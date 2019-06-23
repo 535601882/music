@@ -1,0 +1,39 @@
+/* pages/song/index.wxss */
+.song-wrap{
+  height: 100%;
+  position: relative;
+  padding-top: 70px;
+}
+.album-img{
+  position: absolute;
+  z-index: -1;
+  filter: blur(40px);
+  scale: 1.5;
+}
+.song-disc{
+  text-align: center;
+}
+.cover-img-wrap{
+  border-radius: 50%;
+  width: 184px;
+  height: 184px;
+  margin: 0 auto 20px;
+  position: relative;
+}
+.cover-img{
+  border-radius: 50%;
+  width: 100%;
+  height: 100%;
+}
+.file-name{
+  color: #fff;
+  font-size: 18px
+}
+.song-plybtn{
+  color: #fff;
+  position: absolute;
+  left: 50%;
+  top:50%;
+  transform: translate(-50%, -50%);
+  font-weight: normal
+}

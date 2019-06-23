@@ -1,0 +1,89 @@
+<!-- wxs标签src填写相对路径（绝对路径无效） -->
+<wxs src="../comm.wxs" module="tools" />
+<!-- 导入模板 -->
+<import src="/pages/template/cellList.wxml" />
+<!--index.wxml-->
+<van-tabs active="{{ active }}" bind:change="onChangeTab" sticky animated swipeable>
+    <van-tab title="新歌榜">
+      <!-- 新歌榜banner -->
+      <swiper indicator-dots="{{indicatorDots}}"
+        autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" circular="{{circular}}">
+        <block wx:for="{{banner}}" wx:key="{{item.id}}">
+          <swiper-item>
+            <image src="{{item.imgurl}}" alt="{{item.title}}" class="slide-image" />
+          </swiper-item>
+        </block>
+      </swiper>
+      <!-- 新歌榜列表 -->
+      <van-cell-group>
+        <block wx:for="{{json.newList}}" wx:key="{{item.audio_id}}">
+          <template is="cellList" data="{{item}}"></template>
+        </block>
+      </van-cell-group>
+    </van-tab>
+    <van-tab title="排行榜">
+      <van-cell-group>  
+        <block wx:for="{{json.rankList}}" wx:key="{{item.id}}">
+          <van-cell is-link url="/pages/rank/info/index?rankid={{item.rankid}}" custom-class="cheng-van-cell">
+            <view slot="icon">
+              <view class="van-cell-thumb">
+                <image src="{{tools.replaceSize(item.imgurl,size)}}" alt="{{item.rankname}}" class="rank-thumb-img" />
+              </view>
+            </view>
+            <view slot="title">
+              <view class="van-cell-text">{{item.rankname}}</view>
+            </view>
+          </van-cell>
+        </block>
+      </van-cell-group>
+    </van-tab>
+    <van-tab title="歌单">
+      <block wx:for="{{json.pList}}" wx:key="item.specialid">
+        <van-cell is-link url="/pages/plist/list/index?specialid={{item.specialid}}" custom-class="cheng-van-cell" use-label-slot>
+            <!-- icon -->
+            <view slot="icon">
+              <view class="van-cell-thumb">
+                <image src="{{tools.replaceSize(item.imgurl,size)}}" alt="{{item.specialname}}" class="rank-thumb-img" />
+              </view>
+            </view>
+            <!-- title -->
+            <view slot="title">
+              <view class="van-cell-text">{{item.specialname}}</view>
+            </view>
+            <!-- label -->
+            <view slot="label">
+              <van-icon name="service-o" /> {{item.playcount}}
+            </view>
+          </van-cell>
+      </block>
+    </van-tab>
+    <van-tab title="歌手">
+      <block wx:for="{{json.singerList}}" wx:key="classid">
+          <van-cell is-link url="/pages/singer/list/index?classid={{item.classid}}" custom-class="cheng-van-cell">
+            <view slot="icon">
+              <view class="van-cell-thumb">
+                <image src="{{tools.replaceSize(item.imgurl,size)}}" alt="{{item.classname}}" class="rank-thumb-img" />
+              </view>
+            </view>
+            <view slot="title">
+              <view class="van-cell-text">{{item.classname}}</view>
+            </view>
+          </van-cell>
+      </block>
+    </van-tab>
+  </van-tabs>
+<!-- <view class="container">
+  <view class="userinfo">
+    <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
+    <block wx:else>
+      <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+    </block>
+  </view>
+  <van-button type="primary">按钮</van-button>
+  <navigator url="/pages/new/index">新歌榜</navigator>
+  <navigator url="/pages/rank/index">排行榜</navigator>
+  <navigator url="/pages/plist/index">歌单</navigator>
+  <navigator url="/pages/singer/index">歌手</navigator>
+
+  
+</view> -->

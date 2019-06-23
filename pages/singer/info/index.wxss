@@ -1,0 +1,3 @@
+/* pages/singer/info/index.wxss */
+
+@import "/styles/banner.wxss";

@@ -1,0 +1,3 @@
+/* pages/plist/list/index.wxss */
+
+@import "/styles/banner.wxss";

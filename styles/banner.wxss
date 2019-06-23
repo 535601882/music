@@ -1,0 +1,65 @@
+.rank-info-head-b{
+  position: absolute;
+  top: 0;
+  left: 0;
+
+}
+
+.rank-info-hd{
+  position: relative;
+  overflow: hidden;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  padding: 30px 10px 30px 15px;
+}
+.rank-info-hd::after{
+  content: '';
+  width: 100%;
+  height: 3.8rem;
+  background: -webkit-linear-gradient(bottom,rgba(0,0,0,.3),rgba(0,0,0,0));
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+.rank-info-head-bg{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width:100%;
+  height: 100%;
+  z-index: -1;
+  transform: scale(1.5);
+  filter:blur(40px);
+}
+.info-user-avatar{
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  margin-right:5px;
+}
+.info-thumb{
+  width: 5.3751rem;
+  height:5.3751rem;
+  margin-right: 10px
+}
+.list-title{
+  color: #fff;
+  font-size:17px;
+  margin-bottom:10px;
+}
+.username{
+  color: #fff;
+  font-size: 14px
+}
+.intro{
+  color: #fff;
+  font-size:14px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  word-break: break-all;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2; 
+  margin-top: 5px;
+}

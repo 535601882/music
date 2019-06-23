@@ -1,0 +1,15 @@
+<!--pages/rank/info/index.wxml-->
+<!-- wxs标签src填写相对路径（绝对路径无效） -->
+<wxs src="../../comm.wxs" module="tools" />
+<!-- 导入模板 -->
+<import src="/pages/template/cellList.wxml" />
+<!-- banner -->
+<view class='rank-info-hd'>
+  <image src='{{tools.replaceSize(info.imgurl,size)}}'></image>
+</view>
+<!-- 列表 -->
+<van-cell-group>
+<view wx:for="{{list}}" wx:key="audio_id">
+    <template is="cellList" data="{{item}}"></template>
+  </view>
+</van-cell-group>

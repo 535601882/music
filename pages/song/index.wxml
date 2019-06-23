@@ -1,0 +1,31 @@
+<!--pages/song/index.wxml-->
+<!-- wxs标签src填写相对路径（绝对路径无效） -->
+<wxs src="../comm.wxs" module="tools" />
+<!-- 导入模板 -->
+<import src="/pages/template/cellList.wxml" />
+<view class='song-wrap' wx:if="{{!error}}">
+  <image src='{{tools.replaceSize(album_img,size)}}' class='album-img'></image>
+  <view class="song-disc">
+    <view class='cover-img-wrap'>
+      <image src='{{tools.replaceSize(album_img,size)}}' class='cover-img'></image>
+      <!-- 点击开始播放按键 -->
+      <van-icon name="play-circle-o" wx:if="{{!status}}" class='song-plybtn' size="60px" bind:click="audioPlay"/>
+      <!-- 播放中，点击暂停 -->
+      <van-icon name="pause-circle-o" wx:else  class='song-plybtn' size="60px" bind:click="audioPause"/>
+    </view>
+    <text class='file-name'>{{fileName}}</text>
+  </view>
+
+  <!-- 控制 -->
+
+  <van-slider bind:change="onChange" />
+  {{showTimeMax}}
+</view>
+<view wx:else>
+  <van-icon name="info-o" />{{error}}
+</view>
+
+<!-- <text>{{songUrl}}</text>
+<text>{{songName}}</text>
+<text>{{singerName}}</text>
+<text>{{imgUrl}}</text> -->

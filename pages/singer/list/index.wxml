@@ -1,0 +1,9 @@
+<!--pages/singer/list/index.wxml-->
+<wxs src="../../comm.wxs" module="tools" />
+<!-- 导入模板 -->
+<import src="/pages/template/cellList.wxml" />
+<van-cell-group>
+  <block wx:for="{{list}}" wx:key="{{item.singerid}}">
+    <template is="singerList" data="{{item}}"></template>
+  </block>
+</van-cell-group>

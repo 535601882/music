@@ -1,0 +1,5 @@
+<!--pages/singer/index.wxml-->
+<text>共查找到了{{total}}首歌</text>
+<view wx:for="{{list}}" wx:key="classid">
+  <navigator url='/pages/singer/list/index?classid={{item.classid}}'> {{index}}:{{item.classname}}- {{item.classid}}</navigator>
+</view>

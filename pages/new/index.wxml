@@ -1,0 +1,5 @@
+<!--new/inex.wxml-->
+<text>共查找到了{{total}}首歌</text>
+<view wx:for="{{list}}" wx:key="audio_id">
+  <div> {{index}}:{{item.filename}}- {{item.audio_id}}</div>
+</view>

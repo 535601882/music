@@ -1,0 +1,5 @@
+<!--pages/plist/index.wxml-->
+<text>共查找到了{{total}}首歌</text>
+<view wx:for="{{list}}" wx:key="specialid">
+  <navigator url='/pages/plist/list/index?specialid={{item.specialid}}'> {{index}}:{{item.specialname}}- {{item.specialid}}</navigator>
+</view>

@@ -1,0 +1,10 @@
+var replaceSize = function(str, size){
+  if (str && str.indexOf("{size}")>=0){
+    return str.replace('{size}', size)
+  }
+  return str
+}
+
+module.exports = {
+  replaceSize: replaceSize
+}
