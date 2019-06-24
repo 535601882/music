@@ -174,7 +174,6 @@ Page({
     // 但获取歌曲时长得在 setTimeout() 里才能获取得到
     innerAudioContext.onCanplay(() => {
       console.log("onCanplay")
-      debugger
 
       innerAudioContext.duration
       setTimeout(() => {

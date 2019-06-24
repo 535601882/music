@@ -18,8 +18,8 @@
 
   <!-- 控制 -->
 
-  <van-slider bind:change="onChange" />
-  {{showTimeMax}}
+  <!-- <van-slider bind:change="onChange" />
+  {{showTimeMax}} -->
 </view>
 <view wx:else>
   <van-icon name="info-o" />{{error}}
